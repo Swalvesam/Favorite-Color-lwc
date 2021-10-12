@@ -1,0 +1,70 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            Favorite Colors 
+        </h3>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered slds-table_striped">
+            <thead>
+                
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div title="Key">
+                            Contact Name
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div title="Value">
+                            Favorite Color
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={favColor} for:item="favKey">
+                    <tr key={favKey}>
+                        <th scope="col">
+                            <div title={favKey.key}>{favKey.key}</div>
+                        </th>
+                        <th scope="col">
+                            <div title={favKey.value}>{favKey.value}</div>
+                        </th>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+    <lightning-card>
+        <h3 slot="title">
+            Color Count 
+        </h3>
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered slds-table_striped">
+            <thead>
+
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div title="Key">
+                            Favorite Color
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div title="Value">
+                            Count
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={count} for:item="colKey">
+                    <tr key={colKey}>
+                        <th scope="col">
+                            <div title={colKey.key}>{colKey.key}</div>
+                        </th>
+                        <th scope="col">
+                            <div title={colKey.value}>{colKey.value}</div>
+                        </th>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>
